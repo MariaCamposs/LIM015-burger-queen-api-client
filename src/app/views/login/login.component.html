@@ -4,11 +4,11 @@
       <img src="assets/logo.png" id="icon" alt="User Icon"/>
     </div>
 
-    <form #loginForm = "ngForm" (ngSubmit)="onLogin()">
+    <form [formGroup] = "form"  (ngSubmit)="onLogin()">
       <fa-icon [icon]="faUserAlt"></fa-icon>
-      <input type="email" [(ngModel)]= "user.email" id="email" class="fadeIn second" placeholder="correo electrónico" name="email">
+      <input type="email" formControlName="email" id="email" class="fadeIn second" placeholder="correo electrónico" name="email">
       <fa-icon [icon]="faLock"></fa-icon>
-      <input type="password" [(ngModel)]= "user.password" id="password" class="fadeIn third" placeholder="contraseña" name="password">
+      <input type="password" formaControlPassword="password" id="password" class="fadeIn third" placeholder="contraseña" name="password">
       <fa-icon [icon]="faEyeSlash"></fa-icon>
       <p *ngIf="error" class="error">{{errorMessage}}</p>
       <input type="submit" class="fadeIn fourth" value="Iniciar sesión">
