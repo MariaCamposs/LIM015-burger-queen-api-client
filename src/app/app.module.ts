@@ -7,9 +7,9 @@ import { HeaderComponent } from './templates/header/header.component';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { StaffComponent } from './views/staff/staff.component';
-
+import { TokenInterceptor } from './interceptor/token.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +26,12 @@ import { StaffComponent } from './views/staff/staff.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
+// "logLevel": "debug"
 export class AppModule { }
