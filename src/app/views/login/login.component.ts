@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faUserAlt, faLock, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { faUserAlt, faLock, faEyeSlash, faEye } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../../services/auth/auth.service'
 import jwtDecode from 'jwt-decode';
 import { Router } from '@angular/router';
@@ -57,4 +57,5 @@ export class LoginComponent implements OnInit {
   faUserAlt = faUserAlt;
   faLock = faLock;
   faEyeSlash = faEyeSlash;
+  faEye = faEye;
 }

@@ -5,11 +5,15 @@
     </div>
 
     <form [formGroup] = "form"  (ngSubmit)="onLogin()">
+      <div>
       <fa-icon [icon]="faUserAlt"></fa-icon>
       <input id="email" type="email" name="email" formControlName="email" autocomplete="off" class="fadeIn second" placeholder="correo electrónico">
+      </div>
+      <div class="passwordGroup">
       <fa-icon [icon]="faLock"></fa-icon>
       <input id="password" type="password" name="password" formControlName="password" class="fadeIn third" placeholder="contraseña">
-      <fa-icon [icon]="faEyeSlash"></fa-icon>
+      <fa-icon class="iconEye" [icon]="faEyeSlash"></fa-icon>
+      </div>
       <p *ngIf="error" class="error">{{errorMessage}}</p>
       <input type="submit" class="fadeIn fourth" value="Iniciar sesión">
     </form>
