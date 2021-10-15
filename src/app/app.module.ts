@@ -16,15 +16,16 @@ import { TokenInterceptor } from './interceptor/token.interceptor';
     FooterComponent,
     HeaderComponent,
     routingComponents,
-    StaffComponent
+    StaffComponent,
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
