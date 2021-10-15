@@ -6,9 +6,9 @@
 
     <form [formGroup] = "form"  (ngSubmit)="onLogin()">
       <fa-icon [icon]="faUserAlt"></fa-icon>
-      <input type="email" formControlName="email" id="email" class="fadeIn second" placeholder="correo electrónico" name="email">
+      <input id="email" type="email" name="email" formControlName="email" autocomplete="off" class="fadeIn second" placeholder="correo electrónico">
       <fa-icon [icon]="faLock"></fa-icon>
-      <input type="password" formaControlPassword="password" id="password" class="fadeIn third" placeholder="contraseña" name="password">
+      <input id="password" type="password" name="password" formControlName="password" class="fadeIn third" placeholder="contraseña">
       <fa-icon [icon]="faEyeSlash"></fa-icon>
       <p *ngIf="error" class="error">{{errorMessage}}</p>
       <input type="submit" class="fadeIn fourth" value="Iniciar sesión">
