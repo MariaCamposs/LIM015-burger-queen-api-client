@@ -6,13 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-<<<<<<< HEAD
-  constructor(private route: Router) { }
-
-=======
   constructor(private router: Router) {
   }
->>>>>>> upstream/development
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {

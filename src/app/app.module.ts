@@ -17,12 +17,8 @@ import { TokenInterceptor } from './interceptor/token.interceptor';
     FooterComponent,
     HeaderComponent,
     routingComponents,
-<<<<<<< HEAD
-    StaffComponent,
-=======
     LoginComponent,
     StaffComponent
->>>>>>> upstream/development
   ],
 
   imports: [
