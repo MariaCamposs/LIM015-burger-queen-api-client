@@ -5,7 +5,7 @@
       <img src="assets/logo.png" id="icon" alt="User Icon"/>
     </div>
 
-    <form [formGroup] = "form"  (ngSubmit)="onLogin()">
+    <form [formGroup]="form"  (ngSubmit)="onLogin()">
       <div>
       <i class="fa fa-user"></i>
       <input id="email" type="email" name="email" formControlName="email" autocomplete="off" class="fadeIn second" placeholder="correo electrónico">

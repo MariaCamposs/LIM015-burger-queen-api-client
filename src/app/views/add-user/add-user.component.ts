@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { IUserDetail } from 'src/app/models/user-model';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-add-user',
@@ -6,10 +9,58 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-user.component.css']
 })
 export class AddUserComponent implements OnInit {
+  userData: any;
+  users: Array<IUserDetail>
+  public form: FormGroup;
+  @Input() user: any;
+  @Output() createUser: EventEmitter<{}> = new EventEmitter();
 
-  constructor() { }
+  id: string = ''
+  email: string = ''
+  password: string = ''
+  roles: Object = {}
+  admin: string = ''
+
+  emailForm = new FormControl('', [Validators.required]);
+  passwordForm = new FormControl('', [Validators.required]);
+  rolForm = new FormControl('', Validators.required)
+
+  constructor(private userService: UserService) {
+    this.userData = {}
+    this.users = []
+    this.form = new FormGroup({ //esta funcion recibe un objeto que ser'a parte del group
+      email: this.emailForm,
+      password: this.passwordForm,
+      rol: this.rolForm
+    })
+    this.user;
+  }
 
   ngOnInit(): void {
   }
 
+  onSubmit(){
+    const newUser = {
+      email: this.emailForm.value,
+      password: this.passwordForm.value,
+      roles: {
+        admin: this.rolForm.value
+      }
+    }
+    this.createUser.emit(newUser)
+    console.log('saved', newUser)
+    this.form.reset()
+  }
+
+  newUser(newUser: any){
+    console.log('user component');
+    console.log(newUser);
+    this.userService.newUser(newUser).subscribe(
+      (response: any) => {
+        this.userData = response;
+        console.log(this.userData)
+        this.users.push(this.userData);
+      }
+    )
+  }
 }
