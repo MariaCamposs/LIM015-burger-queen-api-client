@@ -11,6 +11,13 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './views/login/login.component';
 import { StaffComponent } from './views/staff/staff.component';
 import { TokenInterceptor } from './interceptor/token.interceptor';
+import { AddUserComponent } from './views/add-user/add-user.component';
+import { ManageUsersComponent } from './views/manage-users/manage-users.component';
+import { AddProductComponent } from './views/add-product/add-product.component';
+import { ManageProductsComponent } from './views/manage-products/manage-products.component';
+import { AddOrdersComponent } from './views/add-orders/add-orders.component';
+import { ListOrdersComponent } from './views/list-orders/list-orders.component';
+import { ProfileComponent } from './views/profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +25,14 @@ import { TokenInterceptor } from './interceptor/token.interceptor';
     HeaderComponent,
     routingComponents,
     LoginComponent,
-    StaffComponent
+    StaffComponent,
+    AddUserComponent,
+    ManageUsersComponent,
+    AddProductComponent,
+    ManageProductsComponent,
+    AddOrdersComponent,
+    ListOrdersComponent,
+    ProfileComponent
   ],
 
   imports: [

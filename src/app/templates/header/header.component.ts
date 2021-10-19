@@ -9,44 +9,30 @@ import jwtDecode from 'jwt-decode';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  options: Array<string>
-  isSelect: boolean
+
   constructor(private router: Router, private auth: AuthService) {
-    this.options = []
-    this.isSelect = false
   }
 
   ngOnInit(): void {
-    this.rolAccess()
   }
 
-  rolAccess(){
+  btnHome(){
     const token: any = localStorage.getItem('token');
     const roles: any = jwtDecode(token);
 
-    let access = [];
-    if(roles.roles.admin){
-      access = ['home', 'profile', 'log out']
+    if (roles.roles.admin) {
+      this.router.navigate(['home']);
+      console.log('estoy en home')
     } else {
-      access = ['staff', 'profile', 'log out']
+      this.router.navigate(['staff']);
     }
-    return this.options = access;
   }
-
-  select(){
-    this.isSelect = this.isSelect ? false : true;
+  btnLogout(){
+    this.auth.logout();
   }
+  btnProfile(){
+    console.log('estoy en mi perfil')
+    this.router.navigate(['profile']);
 
-  redirect(element: string){
-    switch (element){
-      case 'home': this.router.navigate(['home']);
-      break
-      case 'staff': this.router.navigate(['staff']);
-      break
-      case 'profile': this.router.navigate(['']);
-      break
-      case 'logout': this.auth.logout();
-      break
-    }
   }
 }
