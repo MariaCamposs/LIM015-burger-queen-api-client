@@ -1,11 +1,9 @@
-import { RouterLink } from "@angular/router";
-
 export interface IUserModel {
-  user: Array<IUserDetail>;
+  user?: Array<IUserDetail>;
 }
 export interface IUserDetail {
-  _id: string,
-  email: string,
+  _id?: string,
+  email?: string,
   roles: Rol;
 }
 export interface Rol{
