@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { IUserDetail } from 'src/app/models/user-model';
 import { UserService } from 'src/app/services/user/user.service';
 
@@ -25,7 +26,7 @@ export class AddUserComponent implements OnInit {
   passwordForm = new FormControl('', [Validators.required]);
   rolForm = new FormControl('', Validators.required)
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private router: Router) {
     this.userData = {}
     this.users = []
     this.form = new FormGroup({ //esta funcion recibe un objeto que ser'a parte del group
@@ -60,4 +61,7 @@ export class AddUserComponent implements OnInit {
     this.form.reset()
   }
 
+  btnViewUsers(){
+    this.router.navigate(['manageusers']);
+  }
 }
