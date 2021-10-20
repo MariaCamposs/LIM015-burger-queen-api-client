@@ -49,12 +49,7 @@ export class AddUserComponent implements OnInit {
     }
     this.createUser.emit(newUser)
     console.log('saved', newUser)
-    this.form.reset()
-  }
 
-  newUser(newUser: any){
-    console.log('user component');
-    console.log(newUser);
     this.userService.newUser(newUser).subscribe(
       (response: any) => {
         this.userData = response;
@@ -62,5 +57,7 @@ export class AddUserComponent implements OnInit {
         this.users.push(this.userData);
       }
     )
+    this.form.reset()
   }
+
 }

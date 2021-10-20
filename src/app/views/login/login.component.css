@@ -18,7 +18,7 @@ body {
   justify-content: center;
   width: 100%;
   min-height: 100%;
-  padding: 20px;
+  height: 100vh;
   background-image: url('../../../assets/fondo_login.png');
   height: 100vh;
 }

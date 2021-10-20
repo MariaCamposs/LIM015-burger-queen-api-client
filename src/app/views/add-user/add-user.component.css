@@ -1,0 +1,75 @@
+*{
+  font-family: "Open Sans", sans-serif;
+}
+.title{
+  color: #000000;
+  font-size: 24px;
+  font-weight: bold;
+  justify-content: center;
+  display: flex;
+  padding-top: 50px;
+}
+form{
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 50%;
+  margin: 0;
+  gap: 30px;
+}
+.form{
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.saveuser{
+  width: 147px;
+  height: 44px;
+  border-radius: 30px;
+  color: #000000;
+  background-color: #F6BB33;
+  font-size: 20px;
+  border: none;
+}
+input[type=email], input[type=password], input[type=text]{
+  border-radius: 13px;
+  width: 323px;
+  height: 35px;
+  border: 1px solid #DD3B30;
+}
+input::placeholder{
+  padding-left: 10px;
+  font-size: 16px;
+}
+select{
+  border-radius: 13px;
+  width: 120px;
+  height: 35px;
+  border: 1px solid #DD3B30;
+}
+label{
+  font-size: 20px;
+}
+.usersButton{
+  width: 254px;
+  height: 44px;
+  border-radius: 30px;
+  color: #000000;
+  background-color: #F6BB33;
+  font-size: 24px;
+  border: none;
+}
+.show-users{
+  justify-content: center;
+  display: flex;
+  padding-top: 80px;
+}
+.img{
+  display: inline-flex;
+  justify-content: flex-end;
+  transform: translate(780px, -150px);
+}
