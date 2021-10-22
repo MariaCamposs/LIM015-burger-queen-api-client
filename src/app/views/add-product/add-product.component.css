@@ -1,0 +1,58 @@
+*{
+    font-family: "Open Sans", sans-serif;
+  }
+  .title{
+    color: #000000;
+    font-size: 24px;
+    font-weight: bold;
+    justify-content: center;
+    display: flex;
+    padding-top: 50px;
+  }
+  
+  .form{
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  .saveProduct{
+    width: 147px;
+    height: 44px;
+    border-radius: 30px;
+    color: #000000;
+    background-color: #F6BB33;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+  }
+  input[type=number], input[type=text]{
+    border-radius: 13px;
+    width: 323px;
+    height: 35px;
+    border: 1px solid #DD3B30;
+   
+  }
+  label{
+    font-size: 20px;
+  }
+
+  .show-products{
+    justify-content: center;
+    display: flex;
+    padding-top: 80px;
+  }
+  .productButton{
+    width: 254px;
+    height: 44px;
+    border-radius: 30px;
+    color: #000000;
+    background-color: #F6BB33;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
