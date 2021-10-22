@@ -18,6 +18,7 @@ import { ManageProductsComponent } from './views/manage-products/manage-products
 import { AddOrdersComponent } from './views/add-orders/add-orders.component';
 import { ListOrdersComponent } from './views/list-orders/list-orders.component';
 import { ProfileComponent } from './views/profile/profile.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,13 +35,14 @@ import { ProfileComponent } from './views/profile/profile.component';
     ListOrdersComponent,
     ProfileComponent
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
@@ -49,5 +51,5 @@ import { ProfileComponent } from './views/profile/profile.component';
   }],
   bootstrap: [AppComponent]
 })
-// "logLevel": "debug"
+
 export class AppModule { }
