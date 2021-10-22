@@ -9,6 +9,8 @@ import jwtDecode from 'jwt-decode';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  user!: Object;
+  myModalEdit = false;
 
   constructor(private router: Router, private auth: AuthService) {
   }
@@ -30,8 +32,10 @@ export class HeaderComponent implements OnInit {
   btnLogout(){
     this.auth.logout();
   }
-  btnProfile(){
+  btnProfile(currentUser: Object){
     console.log('estoy en mi perfil')
+    this.user = currentUser;
+    this.myModalEdit = true;
     this.router.navigate(['profile']);
 
   }

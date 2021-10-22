@@ -23,9 +23,9 @@ export class UserService {
     return this.httpClient.post<IUserDetail>(`${this.domain}${this.endpoint}`, body);
   }
   updateUser(uid: any, body: any){
-    return this.httpClient.put<IUserDetail>(`${this.domain}${this.endpoint}`, body);
+    return this.httpClient.put<IUserDetail>(`${this.domain}${this.endpoint}/${uid}`, body);
   }
   deleteOneUser(uid: any){
-    return this.httpClient.delete<IUserDetail>(`${this.domain}${this.endpoint}${uid}`)
+    return this.httpClient.delete<IUserDetail>(`${this.domain}${this.endpoint}/${uid}`)
   }
 }

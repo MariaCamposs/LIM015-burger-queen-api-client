@@ -21,7 +21,7 @@
                 <td class="email">{{user.email}}</td>
                 <td class="rol">{{user.roles.admin ? '✅': '❌'}}</td>
                 <td class="editar">
-                    <button>
+                    <button (click)="showEdit(user)">
                         <fa-icon [icon]="faEdit"></fa-icon>
                     </button>
                 </td>
@@ -38,3 +38,4 @@
     </div>
     <!-- <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls> -->
 </div>
+<app-modal-user [editUser]="myModalEdit" (close)="closeEdit($event)" [user]="user"></app-modal-user>

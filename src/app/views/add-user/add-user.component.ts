@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { IUserDetail } from 'src/app/models/user-model';
 import { UserService } from 'src/app/services/user/user.service';
 
+
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-user.component.html',
