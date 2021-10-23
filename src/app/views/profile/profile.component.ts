@@ -15,6 +15,20 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getUser(singleUser: any) {
+    console.log(singleUser._id);
+    this.userService.getOneUser(singleUser._id)
+      .subscribe((response: any) => {
+        const myuser = response.email;
+        console.log(myuser)
+        this.currentUser(response);
+      })
+  }
+
+  currentUser(cUser: Object) {
+    this.user.push(cUser);
+  }
+
   updateUser(email: string, password: string) {
     if (email == '' || password == '') {
       this.errorMessage = 'Ingrese datos en alguno de los campos para actualizar';
@@ -25,9 +39,15 @@ export class ProfileComponent implements OnInit {
         password: password,
       }
       console.log(userUpdate);
-      let id = this.user._id
-      this.userService.updateUser(id, userUpdate).subscribe(() => {
+      this.userService.updateUser(this.user._id, userUpdate).subscribe(() => {
       })
     }
+  }
+
+  findUser(idD: any){
+    let objIndex = this.user.findIndex(((obj: any) => {
+      obj._id === idD
+    }));
+    console.log(objIndex);
   }
 }

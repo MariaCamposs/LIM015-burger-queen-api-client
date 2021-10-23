@@ -37,7 +37,7 @@ export class ModalUserComponent implements OnInit {
       let id = this.user._id
       this.userService.updateUser(id, userUpdate).subscribe(() => {
         this.closeModal();
-      })
+      });
     }
   }
 

@@ -3,29 +3,29 @@
     <p>Agregar nuevo producto</p>
 </div>
 <section class="form-section">
-    <form action="" class="form">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
         <div>
             <label for="nameProduct">Nombre: </label>
-            <input type="text" name="nameProduct">
+            <input formControlName="name" type="text" name="nameProduct">
         </div>
         <div>
             <label for="priceProduct">Precio: </label>
-            <input type="number" name="priceProduct">
+            <input formControlName="price" type="number" name="priceProduct">
         </div>
 
 
         <div class="inputFile">
             <label for="imgProduct">Imagen:</label>
-            <input type="file" name="imgProduct">
+            <input formControlName="image" type="file" name="imgProduct">
         </div>
 
         <div>
-            <label for="kindProduct">Tipo: </label>
-            <input type="text" name="kindProduct" id="">
+            <label for="typeProduct">Tipo: </label>
+            <input formControlName="type" type="text" name="typeProduct" id="">
         </div>
         <input type="submit" value="Guardar" class="saveProduct">
     </form>
     <div class="show-products">
-        <input type="submit" class="productButton" value="Ver lista de productos">
+        <input type="submit" class="productButton" value="Ver lista de productos" (click)="btnViewProducts()">
     </div>
 </section>
