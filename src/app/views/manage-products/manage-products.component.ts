@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-manage-products',
@@ -11,5 +12,7 @@ export class ManageProductsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  faEdit = faEdit;
+  faTrashAlt = faTrashAlt;
 
 }
