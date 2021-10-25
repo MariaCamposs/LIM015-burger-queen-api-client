@@ -12,6 +12,7 @@ export class ModalUserComponent implements OnInit {
   @Input() editUser: boolean = false;
   @Input() user: any;
   @Output() close: EventEmitter<boolean> = new EventEmitter;
+  @Output() show: EventEmitter<{}> = new EventEmitter;
 
   constructor(private userService: UserService) { }
 
@@ -22,8 +23,12 @@ export class ModalUserComponent implements OnInit {
     this.close.emit(false);
   }
 
+  showUsers(){
+    this.show.emit();
+  }
+
   updateUser(email: string, password: string, rol: string){
-    if(email == '' || rol == '' || password == ''){
+    if(email == '' || rol == ''){
       this.errorMessage = 'Ingrese datos en alguno de los campos para actualizar';
     } else {
       const userUpdate = {
@@ -37,6 +42,7 @@ export class ModalUserComponent implements OnInit {
       let id = this.user._id
       this.userService.updateUser(id, userUpdate).subscribe(() => {
         this.closeModal();
+        this.showUsers();
       });
     }
   }

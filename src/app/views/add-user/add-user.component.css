@@ -34,6 +34,7 @@ form{
   background-color: #F6BB33;
   font-size: 20px;
   border: none;
+  cursor: pointer;
 }
 input[type=email], input[type=password], input[type=text]{
   border-radius: 13px;
@@ -62,6 +63,7 @@ label{
   background-color: #F6BB33;
   font-size: 24px;
   border: none;
+  cursor: pointer;
 }
 .show-users{
   justify-content: center;

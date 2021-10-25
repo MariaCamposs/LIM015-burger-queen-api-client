@@ -36,33 +36,25 @@ export class ManageUsersComponent implements OnInit {
   showUsers() {
     this.userService.getUsers().subscribe(
       (response: any) => {
-        console.log(response);
         this.allUsers(response);
       })
   }
   allUsers(ele: Array<IUserDetail>) {
-    ele.forEach((el: IUserDetail) => {
-      this.users.push(el);
-    })
+      this.users = ele;
   }
 
   deleteUser(id: any) {
-    console.log(id);
     this.removeItem(id)
     this.userService.deleteOneUser(id)
       .subscribe((response) => {
         this.arrayUser = response
-        this.router.navigate(['manageusers'])
-        console.log(this.arrayUser);
+        this.showUsers();
       })
   }
-  removeItem(idD: any) {
+  removeItem(id: any) {
     let objIndex = this.users.findIndex(((obj: any) => {
-      console.log(obj._id)
-      console.log(idD)
-      obj._id === idD
+      obj._id === id
     }));
-    console.log(objIndex)
     if (objIndex != -1) {
       this.users.splice(objIndex, 1)
     }
@@ -76,7 +68,7 @@ export class ManageUsersComponent implements OnInit {
     this.myModalEdit = e;
   }
 
-  getUser(user: any){
+  getUser(){
     this.show = true;
   }
 

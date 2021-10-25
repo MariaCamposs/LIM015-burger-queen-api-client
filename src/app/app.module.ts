@@ -19,6 +19,7 @@ import { AddOrdersComponent } from './views/add-orders/add-orders.component';
 import { ListOrdersComponent } from './views/list-orders/list-orders.component';
 import { ProfileComponent } from './views/profile/profile.component';
 import { ModalUserComponent } from './views/modal-user/modal-user.component';
+import { ModalProductComponent } from './views/modal-product/modal-product.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ModalUserComponent } from './views/modal-user/modal-user.component';
     AddOrdersComponent,
     ListOrdersComponent,
     ProfileComponent,
-    ModalUserComponent
+    ModalUserComponent,
+    ModalProductComponent
   ],
 
   imports: [

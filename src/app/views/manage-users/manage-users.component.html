@@ -38,4 +38,4 @@
     </div>
     <!-- <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls> -->
 </div>
-<app-modal-user [editUser]="myModalEdit" (close)="closeEdit($event)" [user]="user"></app-modal-user>
+<app-modal-user [editUser]="myModalEdit" (close)="closeEdit($event)" (show)="showUsers()" [user]="user"></app-modal-user>

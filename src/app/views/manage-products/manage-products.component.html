@@ -18,19 +18,18 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-
-                    <td class="nameProduct"></td>
-                    <td class="priceProducto"></td>
-                    <td class="imgProduct">Imagen</td>
-                    <td class="typeProduct">Tipo</td>
+                <tr *ngFor="let product of products">
+                    <td class="nameProduct">{{product.name}}</td>
+                    <td class="priceProducto">{{product.price}}</td>
+                    <td class="imgProduct"><img [src]="product.image"></td>
+                    <td class="typeProduct">{{product.type}}</td>
                     <td class="editar">
-                        <button>
+                        <button (click)="showEdit(product)">
                             <fa-icon [icon]="faEdit"></fa-icon>
                         </button>
                     </td>
                     <td class="delete">
-                        <button>
+                        <button (click)="deleteProduct(product._id)">
                             <fa-icon [icon]="faTrashAlt"></fa-icon>
                         </button>
                     </td>
@@ -39,3 +38,4 @@
         </table>
     </div>
 </div>
+<app-modal-product [editProduct]="myModalEdit" (close)="closeEdit($event)" (show)="showProducts()" [product]="product"></app-modal-product>
