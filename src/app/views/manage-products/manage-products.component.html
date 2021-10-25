@@ -1,2 +1,41 @@
 <app-header></app-header>
-<p>manage-products works!</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css"
+    integrity="sha512-P9vJUXK+LyvAzj8otTOKzdfF1F3UYVl13+F8Fof8/2QNb8Twd6Vb+VD52I7+87tex9UXxnzPgWA3rH96RExA7A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<p class="title">Usuarios</p>
+<div class="container">
+    <div class="tableUser">
+        <table>
+            <thead>
+                <tr>
+                    <th class="nameProduct">Nombre</th>
+                    <th class="priceProducto">Precio</th>
+                    <th class="imgProduct">Imagen</th>
+                    <th class="typeProduct">Tipo</th>
+                    <th class="editar">Editar</th>
+                    <th class="delete">Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+
+                    <td class="nameProduct"></td>
+                    <td class="priceProducto"></td>
+                    <td class="imgProduct">Imagen</td>
+                    <td class="typeProduct">Tipo</td>
+                    <td class="editar">
+                        <button>
+                            <fa-icon [icon]="faEdit"></fa-icon>
+                        </button>
+                    </td>
+                    <td class="delete">
+                        <button>
+                            <fa-icon [icon]="faTrashAlt"></fa-icon>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
