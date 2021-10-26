@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faPlusCircle, faMinusCircle, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-add-orders',
@@ -11,5 +12,7 @@ export class AddOrdersComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  faPlusCircle = faPlusCircle;
+  faMinusCircle = faMinusCircle;
+  faTrashAlt = faTrashAlt;
 }

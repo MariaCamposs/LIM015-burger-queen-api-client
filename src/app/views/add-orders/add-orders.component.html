@@ -1,2 +1,124 @@
 <app-header></app-header>
-<p>add-orders works!</p>
+<div class="selectMenu">
+    <select>
+        <option value="" selected> Menú</option>
+        <option value="cartadeldia">Carta del Día</option>
+        <option value="desayuno">Desayuno</option>
+    </select>
+</div>
+<div class="container">
+    <div class="listProducts">
+        <div class="buttons">
+            <button type="submit">Bebidas</button>
+            <button type="submit"> Hamburguesas</button>
+            <button type="submit">Adicionales</button>
+        </div>
+
+        <div class="showProducts">
+            <div class="infoProduct">
+                <div class="iconAdd">
+                    <fa-icon class="icon" [icon]="faPlusCircle"></fa-icon>
+                </div>
+                <div class="description">
+                    <img src="../../../assets/logo.png" alt="">
+                    <p class="name">logito</p>
+                    <p class="price">S/. 5.00</p>
+                </div>
+            </div>
+            <div class="infoProduct">
+                <div class="iconAdd">
+                    <fa-icon class="icon" [icon]="faPlusCircle"></fa-icon>
+                </div>
+                <div>
+                    <img src="../../../assets/logo.png" alt="">
+                    <p class="name">logito</p>
+                    <p class="price">S/. 5.00</p>
+                </div>
+            </div>
+            <div class="infoProduct">
+                <div class="iconAdd">
+                    <fa-icon class="icon" [icon]="faPlusCircle"></fa-icon>
+                </div>
+                <div>
+                    <img src="../../../assets/logo.png" alt="">
+                    <p class="name">logito</p>
+                    <p class="price">S/. 5.00</p>
+                </div>
+            </div>
+            <div class="infoProduct">
+                <div class="iconAdd">
+                    <fa-icon class="icon" [icon]="faPlusCircle"></fa-icon>
+                </div>
+                <div>
+                    <img src="../../../assets/logo.png" alt="">
+                    <p class="name">logito</p>
+                    <p class="price">S/. 5.00</p>
+                </div>
+            </div>
+            <div class="infoProduct">
+                <div class="iconAdd">
+                    <fa-icon class="icon" [icon]="faPlusCircle"></fa-icon>
+                </div>
+                <div>
+                    <img src="../../../assets/logo.png" alt="">
+                    <p class="name">logito</p>
+                    <p class="price">S/. 5.00</p>
+                </div>
+            </div>
+            <div class="infoProduct">
+                <div class="iconAdd">
+                    <fa-icon class="icon" [icon]="faPlusCircle"></fa-icon>
+                </div>
+                <div>
+                    <img src="../../../assets/logo.png" alt="">
+                    <p class="name">logito</p>
+                    <p class="price">S/. 5.00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="orderProducts">
+        <div>
+            <p class="title">Pedido</p>
+        </div>
+        <div class="containerForm">
+            <form class="form">
+                <div class="inputName">
+                    <label for="name">Cliente: </label>
+                    <input name="nameUpdate" required type="text" placeholder="Nombre del cliente">
+                </div>
+            </form>
+            <div class="tableProduct">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="name nameTh">producto</th>
+                            <th class="quantity">cantidad</th>
+                            <th class="price">precio</th>
+                            <th class="delete">Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="name nameTd"></td>
+
+                            <td class="quantity">
+                                <fa-icon class="iconCircle" [icon]="faMinusCircle"></fa-icon>
+                                <p class="quantityTd">555</p>
+                                <fa-icon class="iconCircle" [icon]="faPlusCircle"></fa-icon>
+                            </td>
+                            <td class="price">
+                                <p class="priceTd"></p>
+                            </td>
+                            <td class="delete deleteTd">
+                                <fa-icon class="iconCircle" [icon]="faTrashAlt"></fa-icon>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -20,7 +20,7 @@
             <tbody>
                 <tr *ngFor="let product of products">
                     <td class="nameProduct">{{product.name}}</td>
-                    <td class="priceProducto">{{product.price}}</td>
+                    <td class="priceProducto">S/. {{product.price}}</td>
                     <td class="imgProduct"><img [src]="product.image"></td>
                     <td class="typeProduct">{{product.type}}</td>
                     <td class="editar">
@@ -38,4 +38,5 @@
         </table>
     </div>
 </div>
-<app-modal-product [editProduct]="myModalEdit" (close)="closeEdit($event)" (show)="showProducts()" [product]="product"></app-modal-product>
+<app-modal-product [editProduct]="myModalEdit" (close)="closeEdit($event)" (show)="showProducts()" [product]="product">
+</app-modal-product>

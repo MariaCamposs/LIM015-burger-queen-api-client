@@ -41,6 +41,9 @@ input[type=email], input[type=password], input[type=text]{
   width: 323px;
   height: 35px;
   border: 1px solid #DD3B30;
+  padding-left: 10px;
+  margin-left: 5px;
+  font-size: 16px;
 }
 input::placeholder{
   padding-left: 10px;
@@ -48,9 +51,12 @@ input::placeholder{
 }
 select{
   border-radius: 13px;
-  width: 120px;
+  width: 200px;
   height: 35px;
   border: 1px solid #DD3B30;
+  padding-left: 10px;
+  margin-left: 5px;
+  font-size: 16px;
 }
 label{
   font-size: 20px;

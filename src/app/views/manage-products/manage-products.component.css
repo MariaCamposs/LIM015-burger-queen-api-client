@@ -59,8 +59,16 @@
     align-items: center;
     border-bottom:1pt solid black;
   }
+  .imgProduct {
+    width: 80px;
+    
+  }
+  img{
+    width:60%;
+  }
   .img{
     display: inline-flex;
     justify-content: flex-end;
     transform: translate(780px, 150px);
-  }
+    
+    }
