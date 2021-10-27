@@ -10,7 +10,7 @@ export class ModalProductComponent implements OnInit {
 
   errorMessage: string = '';
   @Input() editProduct: boolean = false;
-  @Input()  product: any;
+  @Input() product: any;
   @Output() close: EventEmitter<boolean> = new EventEmitter;
   @Output() show: EventEmitter<{}> = new EventEmitter;
 
@@ -19,16 +19,16 @@ export class ModalProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  closeModal(){
+  closeModal() {
     this.close.emit(false);
   }
 
-  showProducts(){
+  showProducts() {
     this.show.emit();
   }
 
-  updateProduct(name: string, price: string, image: string, type: string){
-    if(name === '' || price === '0' || image === '' || type === ''){
+  updateProduct(name: string, price: string, image: string, type: string) {
+    if (name === '' || price === '0' || image === '' || type === '') {
       this.errorMessage = 'Ingrese datos en alguno de los campos';
     } else {
       const productUpdate = {
