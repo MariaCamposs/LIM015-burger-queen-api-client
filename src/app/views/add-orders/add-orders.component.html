@@ -9,70 +9,20 @@
 <div class="container">
     <div class="listProducts">
         <div class="buttons">
-            <button type="submit">Bebidas</button>
-            <button type="submit"> Hamburguesas</button>
-            <button type="submit">Adicionales</button>
+            <button type="submit" (click)="filterType('Bebidas')">Bebidas</button>
+            <button type="submit" (click)="filterType('Hamburguesa')"> Hamburguesas</button>
+            <button type="submit" (click)="filterType('Adicionales')">Adicionales</button>
         </div>
 
         <div class="showProducts">
-            <div class="infoProduct">
+            <div class="infoProduct" *ngFor="let product of items">
                 <div class="iconAdd">
                     <fa-icon class="icon" [icon]="faPlusCircle"></fa-icon>
                 </div>
                 <div class="description">
-                    <img src="../../../assets/logo.png" alt="">
-                    <p class="name">logito</p>
-                    <p class="price">S/. 5.00</p>
-                </div>
-            </div>
-            <div class="infoProduct">
-                <div class="iconAdd">
-                    <fa-icon class="icon" [icon]="faPlusCircle"></fa-icon>
-                </div>
-                <div>
-                    <img src="../../../assets/logo.png" alt="">
-                    <p class="name">logito</p>
-                    <p class="price">S/. 5.00</p>
-                </div>
-            </div>
-            <div class="infoProduct">
-                <div class="iconAdd">
-                    <fa-icon class="icon" [icon]="faPlusCircle"></fa-icon>
-                </div>
-                <div>
-                    <img src="../../../assets/logo.png" alt="">
-                    <p class="name">logito</p>
-                    <p class="price">S/. 5.00</p>
-                </div>
-            </div>
-            <div class="infoProduct">
-                <div class="iconAdd">
-                    <fa-icon class="icon" [icon]="faPlusCircle"></fa-icon>
-                </div>
-                <div>
-                    <img src="../../../assets/logo.png" alt="">
-                    <p class="name">logito</p>
-                    <p class="price">S/. 5.00</p>
-                </div>
-            </div>
-            <div class="infoProduct">
-                <div class="iconAdd">
-                    <fa-icon class="icon" [icon]="faPlusCircle"></fa-icon>
-                </div>
-                <div>
-                    <img src="../../../assets/logo.png" alt="">
-                    <p class="name">logito</p>
-                    <p class="price">S/. 5.00</p>
-                </div>
-            </div>
-            <div class="infoProduct">
-                <div class="iconAdd">
-                    <fa-icon class="icon" [icon]="faPlusCircle"></fa-icon>
-                </div>
-                <div>
-                    <img src="../../../assets/logo.png" alt="">
-                    <p class="name">logito</p>
-                    <p class="price">S/. 5.00</p>
+                    <img [src]="product.image" alt="">
+                    <p class="name">{{ product.name }}</p>
+                    <p class="price">{{ product.price | currency:'S/.' }}</p>
                 </div>
             </div>
         </div>
