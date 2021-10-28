@@ -1,33 +1,29 @@
 <app-header></app-header>
-<div class="selectMenu">
-    <select>
-        <option value="" selected> Menú</option>
-        <option value="cartadeldia">Carta del Día</option>
-        <option value="desayuno">Desayuno</option>
-    </select>
-</div>
 <div class="container">
     <div class="container-orders">
-    <div class="listProducts">
-        <div class="buttons">
-            <button type="submit" (click)="filterType('Bebidas')">Bebidas</button>
-            <button type="submit" (click)="filterType('Hamburguesa')"> Hamburguesas</button>
-            <button type="submit" (click)="filterType('Adicionales')">Adicionales</button>
-        </div>
+        <div class="listProducts">
+            <div class="buttons">
+                <button type="submit" (click)="filterType('Bebidas')">Bebidas</button>
+                <button type="submit" (click)="filterType('Hamburguesa')"> Hamburguesas</button>
+                <button type="submit" (click)="filterType('Adicionales')">Adicionales</button>
+                <button type="submit" (click)="filterType('Desayunos')">Desayunos</button>
+            </div>
 
-        <div class="showProducts">
-            <div class="infoProduct" *ngFor="let product of items">
-                <div class="iconAdd">
-                    <fa-icon class="icon" [icon]="faPlusCircle"></fa-icon>
-                </div>
-                <div class="description">
-                    <img [src]="product.image" alt="">
-                    <p class="name">{{ product.name }}</p>
-                    <p class="price">{{ product.price | currency:'S/.' }}</p>
+            <div class="showProducts">
+                <div class="infoProduct" *ngFor="let product of items">
+                    <div class="iconAdd">
+                        <fa-icon class="icon" (click)="addProduct(product)" [icon]="faPlusCircle"></fa-icon>
+                    </div>
+                    <div class="description">
+                        <div class="image">
+                            <img [src]="product.image" alt="">
+                        </div>
+                        <p class="name">{{ product.name }}</p>
+                        <p class="price">{{ product.price | currency:'S/.' }}</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 
     <div class="orderProducts">
@@ -35,12 +31,10 @@
             <p class="title">Pedido</p>
         </div>
         <div class="containerForm">
-            <form class="form">
-                <div class="inputName">
-                    <label for="name">Cliente: </label>
-                    <input name="nameUpdate" required type="text" placeholder="Nombre del cliente">
-                </div>
-            </form>
+            <div class="inputName">
+                <label for="name">Cliente: </label>
+                <input name="nameUpdate" required type="text" placeholder="Nombre del cliente">
+            </div>
             <div class="tableProduct">
                 <table>
                     <thead>
@@ -52,30 +46,33 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="name nameTd"></td>
-
+                        <tr *ngFor="let product of productItem">
+                            <td class="name nameTd">{{product.product.name}}</td>
                             <td class="quantity">
                                 <div class="icon-relative">
-                                    <fa-icon class="iconCircle" [icon]="faMinusCircle"></fa-icon>
+                                    <fa-icon class="iconCircle" (click)="decreaseOneItem(product)"
+                                        [icon]="faMinusCircle"></fa-icon>
                                 </div>
-                                <p class="quantityTd">555</p>
+                                <p class="quantityTd">{{product.qty}}</p>
                                 <div class="icon-relative">
-                                    <fa-icon class="iconCircle" [icon]="faPlusCircle"></fa-icon>
+                                    <fa-icon class="iconCircle" (click)="increaseOneItem(product)"
+                                        [icon]="faPlusCircle"></fa-icon>
                                 </div>
                             </td>
                             <td class="price">
-                                <p class="priceTd"></p>
+                                <p class="priceTd">{{product.product.price}}</p>
                             </td>
                             <td class="delete deleteTd">
                                 <div class="">
-                                    <fa-icon class="iconDelete" [icon]="faTrashAlt"></fa-icon>
+                                    <fa-icon class="iconDelete" (click)="deleteItem(product)" [icon]="faTrashAlt">
+                                    </fa-icon>
                                 </div>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+            <button> Send to kitchen</button>
         </div>
     </div>
 </div>
