@@ -14,10 +14,6 @@
             placeholder="Correo electrónico">
         </div>
         <div>
-          <label for="password">Contraseña: </label>
-          <input #password type="password" placeholder="Contraseña">
-        </div>
-        <div>
           <label for="rol">Admin: </label>
           <select name="rol" #rol [(value)]="user.roles.admin">
             <option disabled value="">Rol de admin</option>
@@ -28,7 +24,7 @@
 
         <div class="cancel-save">
           <button type='button' (click)="closeModal()" class="cancel">Cancelar</button>
-          <button type="button" (click)="updateUser(updateEmail.value, password.value, rol.value)"
+          <button type="button" (click)="updateUser(updateEmail.value, rol.value)"
             class="save">Actualizar</button>
         </div>
       </form>

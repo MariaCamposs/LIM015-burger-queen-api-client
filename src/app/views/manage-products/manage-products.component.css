@@ -21,12 +21,13 @@
   .tableUser{
       display: flex;
       justify-content: center;
+      flex-direction: column;
   }
   table{
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 50px;
     font-size: 18px;
   }
   tr {
@@ -36,9 +37,16 @@
     margin: 5px 0 ;
     font-size: 20px;
   }
-  
+  .my-pagination{
+    padding-top: 50px;
+    align-self: center;
+  }
+    .my-pagination /deep/ .ngx-pagination .current {
+    background: red;
+  }
+
     .nameProduct {
-    width: 250px;  
+    width: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,16 +67,19 @@
     align-items: center;
     border-bottom:1pt solid black;
   }
+  .typeProduct{
+    width: 150px;
+  }
   .imgProduct {
     width: 80px;
-    
+    height: 50px;
   }
   img{
-    width:60%;
+    width: 30px;
   }
   .img{
     display: inline-flex;
     justify-content: flex-end;
     transform: translate(780px, 150px);
-    
+
     }

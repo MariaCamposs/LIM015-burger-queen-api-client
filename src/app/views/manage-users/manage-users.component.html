@@ -15,7 +15,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let user of users ">
+            <tr *ngFor="let user of users | paginate: { itemsPerPage: 10, currentPage: p }">
                 <!-- | paginate: { itemsPerPage: 5, currentPage: p }, index as i -->
                 <!-- <td>{{i + 1}}</td> -->
                 <td class="email">{{user.email}}</td>
@@ -36,6 +36,6 @@
     <div class="img">
         <img src="../../../assets/burger.png" alt="Burger queen">
     </div>
-    <!-- <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls> -->
+    <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
 </div>
 <app-modal-user [editUser]="myModalEdit" (close)="closeEdit($event)" (show)="showUsers()" [user]="user"></app-modal-user>

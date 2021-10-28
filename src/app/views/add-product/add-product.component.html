@@ -4,6 +4,7 @@
 </div>
 <section class="form-section">
     <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
+        <div class="sectionOne">
         <div>
             <label for="nameProduct">Nombre: </label>
             <input formControlName="name" type="text" name="nameProduct">
@@ -12,17 +13,27 @@
             <label for="priceProduct">Precio: </label>
             <input formControlName="price" type="number" name="priceProduct">
         </div>
+        </div>
+        <div class="sectionTwo">
         <div class="inputFile">
             <label for="imgProduct">Imagen:</label>
             <input formControlName="image" type="text" name="imgProduct">
         </div>
-        <div>
+        <div class="selectProduct">
             <label for="typeProduct">Tipo: </label>
-            <input formControlName="type" type="text" name="typeProduct" id="">
+            <select name="typeProduct" formControlName="type" id="">
+                <option value="">Producto</option>
+                <option value="Bebidas">Bebidas</option>
+                <option value="Hamburguesas">Hamburguesas</option>
+                <option value="Adicionales">Adicionales</option>
+                <option value="Desayunos">Desayunos</option>
+            </select>
         </div>
-        <input type="submit" value="Guardar" class="saveProduct">
+        </div>
+
     </form>
     <div class="show-products">
+        <input type="submit" value="Guardar" class="saveProduct">
         <input type="submit" class="productButton" value="Ver lista de productos" (click)="btnViewProducts()">
     </div>
 </section>

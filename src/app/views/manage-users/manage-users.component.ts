@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 export class ManageUsersComponent implements OnInit {
   users: Array<IUserDetail>;
   show: boolean;
+  p: number = 1;
   user!: Object;
   myModalEdit = false;
   arrayUser: Object = {

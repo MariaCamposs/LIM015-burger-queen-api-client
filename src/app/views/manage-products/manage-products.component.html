@@ -3,7 +3,7 @@
     integrity="sha512-P9vJUXK+LyvAzj8otTOKzdfF1F3UYVl13+F8Fof8/2QNb8Twd6Vb+VD52I7+87tex9UXxnzPgWA3rH96RExA7A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<p class="title">Usuarios</p>
+<p class="title">Productos</p>
 <div class="container">
     <div class="tableUser">
         <table>
@@ -18,7 +18,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let product of products">
+                <tr *ngFor="let product of products  | paginate: { itemsPerPage: 10, currentPage: p }">
                     <td class="nameProduct">{{product.name}}</td>
                     <td class="priceProducto"> {{product.price | currency:'S/.'}}</td>
                     <td class="imgProduct"><img [src]="product.image"></td>
@@ -36,6 +36,7 @@
                 </tr>
             </tbody>
         </table>
+        <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
     </div>
 </div>
 <app-modal-product [editProduct]="myModalEdit" (close)="closeEdit($event)" (show)="showProducts()" [product]="product">

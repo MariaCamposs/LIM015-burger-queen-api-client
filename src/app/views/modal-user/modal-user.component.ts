@@ -27,13 +27,12 @@ export class ModalUserComponent implements OnInit {
     this.show.emit();
   }
 
-  updateUser(email: string, password: string, rol: string){
+  updateUser(email: string, rol: string){
     if(email == '' || rol == ''){
       this.errorMessage = 'Ingrese datos en alguno de los campos para actualizar';
     } else {
       const userUpdate = {
         email: email,
-        password: password,
         roles: {
           admin: rol == 'true' ? true : false
         }

@@ -13,6 +13,7 @@ export class ManageProductsComponent implements OnInit {
 
   products: Array<IProductDetail>;
   show: boolean;
+  p: number = 1;
   product!: Object;
   myModalEdit = false;
   arrayProduct: Object = {

@@ -20,6 +20,7 @@ import { ListOrdersComponent } from './views/list-orders/list-orders.component';
 import { ProfileComponent } from './views/profile/profile.component';
 import { ModalUserComponent } from './views/modal-user/modal-user.component';
 import { ModalProductComponent } from './views/modal-product/modal-product.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { ModalProductComponent } from './views/modal-product/modal-product.compo
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
