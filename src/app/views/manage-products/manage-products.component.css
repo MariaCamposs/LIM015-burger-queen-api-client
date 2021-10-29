@@ -51,6 +51,7 @@
     justify-content: center;
     align-items: center;
     border-bottom:1pt solid black;
+    text-align: center;
    }
    button{
     background-color: transparent;
