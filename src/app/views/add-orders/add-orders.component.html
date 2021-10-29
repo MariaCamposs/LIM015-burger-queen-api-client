@@ -33,15 +33,15 @@
         <div class="containerForm">
             <div class="inputName">
                 <label for="name">Cliente: </label>
-                <input name="nameUpdate" required type="text" placeholder="Nombre del cliente">
+                <input [formControl]="nameClient" name="name" required type="text" placeholder="Nombre del cliente">
             </div>
             <div class="tableProduct">
                 <table>
                     <thead>
                         <tr>
-                            <th class="name nameTh">producto</th>
-                            <th class="quantity">cantidad</th>
-                            <th class="price">precio</th>
+                            <th class="name nameTh">Producto</th>
+                            <th class="quantity">Cantidad</th>
+                            <th class="price">Prec. Unit.</th>
                             <th class="delete"></th>
                         </tr>
                     </thead>
@@ -49,18 +49,18 @@
                         <tr *ngFor="let product of productItem">
                             <td class="name nameTd">{{product.product.name}}</td>
                             <td class="quantity">
-                                <div class="icon-relative">
+                                <div class="icon-decrease">
                                     <fa-icon class="iconCircle" (click)="decreaseOneItem(product)"
                                         [icon]="faMinusCircle"></fa-icon>
                                 </div>
                                 <p class="quantityTd">{{product.qty}}</p>
-                                <div class="icon-relative">
+                                <div class="icon-increase">
                                     <fa-icon class="iconCircle" (click)="increaseOneItem(product)"
                                         [icon]="faPlusCircle"></fa-icon>
                                 </div>
                             </td>
                             <td class="price">
-                                <p class="priceTd">{{product.product.price}}</p>
+                                <p class="priceTd">S/ {{product.product.price}}</p>
                             </td>
                             <td class="delete deleteTd">
                                 <div class="">
@@ -72,7 +72,12 @@
                     </tbody>
                 </table>
             </div>
-            <button> Send to kitchen</button>
+        </div>
+        <section class="total">
+            <p>Total: S/ {{total}}</p>
+        </section>
+        <div class="sendButton">
+            <button (click)="newOrder(client)"> Send to kitchen</button>
         </div>
     </div>
 </div>

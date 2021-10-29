@@ -9,6 +9,7 @@ import { ProductService } from 'src/app/services/product/product.service';
 import { OrderService } from 'src/app/services/order/order.service';
 import { catchError } from 'rxjs/Operators';
 import { throwError } from 'rxjs';
+import { QueryValueType } from '@angular/compiler/src/core';
 @Component({
   selector: 'app-add-orders',
   templateUrl: './add-orders.component.html',
@@ -133,6 +134,7 @@ export class AddOrdersComponent implements OnInit {
   newOrder(client: any) {
     const token: any = localStorage.getItem('token')
     const user: any = jwtDecode(token)
+    this.getNameClient();
     const order = {
       status: "pending",
       userId: user.uid,
@@ -155,6 +157,7 @@ export class AddOrdersComponent implements OnInit {
         this.productItem = [];
         client = client.value;
         this.getTotal()
+        console.log(order)
       })
   }
 

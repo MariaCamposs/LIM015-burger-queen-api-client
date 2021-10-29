@@ -1,2 +1,44 @@
 <app-header></app-header>
-<p>list-orders works!</p>
+<p class="title">Ordenes</p>
+<div class="container">
+  <div class="table-orders">
+    <table>
+      <thead>
+        <tr>
+          <th class="orders">Ordenes</th>
+          <th class="name-client">Nombre de cliente</th>
+          <th class="status-select">
+            <select name="status">
+            <option value="">Filtrar por estado:</option>
+            <option value="pending">Pendiente</option>
+            <option value="preparing">Preparando</option>
+            <option value="canceled">Cancelado</option>
+            <option value="delivering">Enviando</option>
+            <option value="delivered">Enviado</option>
+          </select>
+        </th>
+          <th class="typeProduct">Actualizar estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          <td class="orders-buttom">
+            <button>Orden Nº {{order._id}}</button>
+          </td>
+          <td class="name"> {{order.client}}</td>
+          <td class="status"> {{order.status}}</td>
+          <td class="status-upgrade">
+            <select name="status" (click)="updateStatus(order)">
+              <option value="">{{order.status}}</option>
+              <option  value="pending">Pendiente</option>
+              <option value="preparing">Preparando</option>
+              <option value="canceled">Cancelado</option>
+              <option value="delivering">Enviando</option>
+              <option value="delivered">Enviado</option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

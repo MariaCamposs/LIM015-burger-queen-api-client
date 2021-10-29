@@ -30,9 +30,10 @@ select{
     justify-items: center;
 }
 .buttons{
-    padding: 0 10px;
-    display: flex;
-   justify-content:space-around;
+  padding: 0 10px;
+  display: flex;
+  justify-content:space-around;
+  flex-wrap: wrap;
 }
 button{
   width: 150px;
@@ -121,11 +122,37 @@ img{
       padding-top: 10px;
   }
 
-input[type=text], .nameTd, .priceTd{
-    border-radius: 13px;
+  input[type=text]{
+    background-color: #f6f6f6;
+    font-family: "Open Sans", sans-serif;
+    border: none;
+    color: #0d0d0d;
+    padding: 8px 10px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    border: 2px solid #f6f6f6;
+    border-radius: 30px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+.nameTd, .quantityTd, .priceTd{
     height: 30px;
-    border: 1px solid #DD3B30;
+    background-color: #f6f6f6;
+    font-family: "Open Sans", sans-serif;
+    color: #0d0d0d;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
     font-size: 14px;
+    margin: 5px;
+    border: 2px solid #f6f6f6;
+    border-radius: 30px;
+    padding: 5px;
   }
 input::placeholder{
     padding-left: 10px;
@@ -158,7 +185,7 @@ table{
     font-size: 16px;
   }
   .price{
-    width: 80px;
+    width: 130px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -175,31 +202,33 @@ table{
   justify-content: center;
   align-items: center;
   }
-  .nameTd , .nameTh{
+  .nameTh{
     width: 350px;
-  }
-  .quantityTd{
     display: flex;
+    justify-content: center;
     align-items: center;
-    border-radius: 13px;
-    height: 30px;
-    border: 1px solid #DD3B30;
-    padding: 0 10px;
-    margin: 0 5px;
-    font-size: 16px;
   }
-  .icon-relative{
-    position: relative;
+  .nameTd{
+    width: 350px;
+    display: flex;
+    justify-content: flex-start;
   }
   .priceTd{
     width: 50px;
+    text-align: center;
   }
   .iconCircle{
   color: #DD3B30;
   cursor: pointer;
   position: absolute;
-  right: -10px;
-  top: -13px;
+  }
+  .icon-decrease{
+    position: absolute;
+    transform: translate(-30px, -8px);
+  }
+  .icon-increase{
+    position: absolute;
+    transform: translate(15px, -8px);
   }
   .iconCircle:hover, .iconDelete:hover{
   color: #E74574;
@@ -208,4 +237,14 @@ table{
   color: #DD3B30;
   cursor: pointer;
   }
-
+  .total{
+    display: flex;
+    justify-content: flex-end;
+    width: 90%;
+    padding: 15px 0 15px 0;
+  }
+  .sendButton{
+    display: flex;
+    align-self: center;
+    padding-top: 50px;
+  }
