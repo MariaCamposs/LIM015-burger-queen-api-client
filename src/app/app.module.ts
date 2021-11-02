@@ -21,6 +21,7 @@ import { ProfileComponent } from './views/profile/profile.component';
 import { ModalUserComponent } from './views/modal-user/modal-user.component';
 import { ModalProductComponent } from './views/modal-product/modal-product.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ModalOrderComponent } from './views/modal-order/modal-order.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ListOrdersComponent,
     ProfileComponent,
     ModalUserComponent,
-    ModalProductComponent
+    ModalProductComponent,
+    ModalOrderComponent
   ],
 
   imports: [

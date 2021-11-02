@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { OrdersModel } from 'src/app/models/order-model';
 import { OrderService } from 'src/app/services/order/order.service';
 
@@ -16,12 +16,15 @@ export class ListOrdersComponent implements OnInit {
   p: number = 1;
   id: number = 1;
   status: string = ''
-  order: any;
+  order!: Object;
   modalOrder = false;
   arrayOrder: Object = {
     _id: '',
     client: '',
     status: '',
+    products: [],
+    dateEntry: '',
+    dateProcesed: ''
   }
   constructor(private router: Router, private orderService: OrderService) {
     this.orders = []
@@ -38,7 +41,7 @@ export class ListOrdersComponent implements OnInit {
       (response: any) => {
         console.log(response)
         this.allOrders(response);
-        this.filterStatus('delivering');
+        this.filterStatus('pending');
       }
     )
   }
@@ -46,8 +49,15 @@ export class ListOrdersComponent implements OnInit {
     this.orders = order;
   }
 
+  showOneOrder(id: any) {
+    this.orderService.getOneOrder(id).subscribe((response: any) => {
+      this.arrayOrder = response
+    })
+    this.modalOrder = true;
+  }
+
   filterStatus(status: any) {
-    this.items = this.orders.filter((elem: OrdersModel) => {
+    this.items = this.orders.filter((elem: any) => {
       console.log('mostrando el status: ', status)
       console.log(this.items)
       return elem.status === status;
@@ -86,5 +96,12 @@ export class ListOrdersComponent implements OnInit {
         this.showOrders();
       })
     }
+  }
+
+  closeEdit(e: boolean) {
+    this.modalOrder = e;
+  }
+  getOrder() {
+    this.show = true;
   }
 }

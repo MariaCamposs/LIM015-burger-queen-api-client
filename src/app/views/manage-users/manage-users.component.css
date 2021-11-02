@@ -14,7 +14,7 @@
   }
   .tableUser{
     display: flex;
-        flex-direction: column;
+    flex-direction: column;
     }
   table{
     display: flex;
