@@ -1,1 +1,22 @@
-<p>modal-order works!</p>
+<section class="modal" *ngIf="showOneOrder">
+  <div class="modal_content">
+    <div class="edit-product">
+      <div class="headerModal">
+        <span class="closeModal" (click)="closeModal()">&times;</span>
+      </div>
+      <h2>Orden</h2>
+        <div>
+          <label for="name">Nombre: </label>
+          <p class="client">{{ order.client }}</p>
+          <label for="name">Estado de orden: </label>
+          <p class="status">{{ order.status }}</p>
+          <label for="name">Listado de productos: </label>
+          <p class="name">{{ order.product.name }}</p>
+          <p class="price">{{ order.product.price }}</p>
+        </div>
+        <div class="cancel-save">
+          <button type='button' (click)="closeModal()" class="cancel">Cancelar</button>
+        </div>
+    </div>
+  </div>
+</section>

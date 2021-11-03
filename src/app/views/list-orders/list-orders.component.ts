@@ -36,6 +36,15 @@ export class ListOrdersComponent implements OnInit {
     this.showOrders();
   }
 
+  filterStatus(stats: any) {
+    this.items = this.orders.filter((order: any) => {
+      if(order.status === stats){
+        console.log(order)
+        return order
+      }
+    });
+  }
+
   showOrders() {
     this.orderService.getOrders().subscribe(
       (response: any) => {
@@ -49,19 +58,11 @@ export class ListOrdersComponent implements OnInit {
     this.orders = order;
   }
 
-  showOneOrder(id: any) {
-    this.orderService.getOneOrder(id).subscribe((response: any) => {
-      this.arrayOrder = response
-    })
-    this.modalOrder = true;
-  }
-
-  filterStatus(status: any) {
-    this.items = this.orders.filter((elem: any) => {
-      console.log('mostrando el status: ', status)
-      console.log(this.items)
-      return elem.status === status;
-    })
+  showOrder(id: any) {
+    const orderIndex = this.orders.findIndex(((order: any) => {
+      order._id === id
+    }));
+    return orderIndex
   }
 
   updateStatus(item: any) {
