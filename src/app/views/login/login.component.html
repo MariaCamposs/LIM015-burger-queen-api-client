@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <div class="fadeIn first">
+      <img src="assets/logo.png" id="icon" alt="User Icon"/>
+    </div>
+
+    <form [formGroup]="form"  (ngSubmit)="onLogin()">
+      <div>
+      <i class="fa fa-user"></i>
+      <input id="email" type="email" name="email" formControlName="email" autocomplete="off" class="fadeIn second" placeholder="correo electrónico">
+      </div>
+      <div class="passwordGroup">
+      <i class="fa fa-lock"></i>
+      <input id="password" [type]="fieldTextType ? 'text' : 'password'" name="password" formControlName="password" class="fadeIn third" placeholder="contraseña">
+      <i id="iconEye" class="fa" [ngClass]="{'fa-eye-slash': !fieldTextType, 'fa-eye': fieldTextType}" (click)="toggleFieldTextType()"></i>
+      </div>
+      <p *ngIf="error" class="error">{{errorMessage}}</p>
+      <input type="submit" class="fadeIn fourth" value="Iniciar sesión">
+    </form>
+  </div>
+</div>

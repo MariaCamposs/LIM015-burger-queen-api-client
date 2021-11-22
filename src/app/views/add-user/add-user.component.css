@@ -1,0 +1,97 @@
+*{
+  font-family: "Open Sans", sans-serif;
+}
+.title{
+  color: #000000;
+  font-size: 24px;
+  font-weight: bold;
+  justify-content: center;
+  display: flex;
+  padding-top: 50px;
+}
+
+.form{
+  max-width: 600px;
+  margin: 0 auto;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.saveuser{
+  width: 147px;
+  height: 44px;
+  border-radius: 30px;
+  color: #000000;
+  background-color: #F6BB33;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  align-self: center;
+}
+input[type=email], input[type=password], input[type=text] {
+  background-color: #f6f6f6;
+  font-family: "Open Sans", sans-serif;
+  border: none;
+  color: #0d0d0d;
+  padding: 15px 32px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  border: 2px solid #f6f6f6;
+  border-radius: 30px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+input[type=email]:focus, input[type=password]:focus, input[type=text]:focus {
+  background-color: #fff;
+  border-bottom: 2px solid #C31414;
+}
+
+input[type=email]:placeholder, input[type=password]:placeholder, input[type=text]:placeholder {
+  color: #cccccc;
+}
+.input{
+  flex-direction: column;
+  display: flex;
+}
+select{
+  margin: 5px;
+  border: 2px solid #f6f6f6;
+  border-radius: 30px;
+  background-color: #f6f6f6;
+  padding-left: 10px;
+  margin-left: 5px;
+  color: #0d0d0d;
+  padding: 15px 32px;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+label{
+  font-size: 20px;
+}
+.usersButton{
+  width: 254px;
+  height: 44px;
+  border-radius: 30px;
+  color: #000000;
+  background-color: #F6BB33;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+}
+.show-users{
+  justify-content: center;
+  display: flex;
+  padding-top: 80px;
+}
+.img{
+  display: inline-flex;
+  justify-content: flex-end;
+  transform: translate(780px, -150px);
+}

@@ -1,0 +1,43 @@
+<app-header></app-header>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css"
+    integrity="sha512-P9vJUXK+LyvAzj8otTOKzdfF1F3UYVl13+F8Fof8/2QNb8Twd6Vb+VD52I7+87tex9UXxnzPgWA3rH96RExA7A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<p class="title">Productos</p>
+<div class="container">
+    <div class="tableProduct">
+        <table>
+            <thead>
+                <tr>
+                    <th class="nameProduct">Nombre</th>
+                    <th class="priceProducto">Precio</th>
+                    <th class="imgProduct">Imagen</th>
+                    <th class="typeProduct">Tipo</th>
+                    <th class="editar">Editar</th>
+                    <th class="delete">Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products  | paginate: { itemsPerPage: 10, currentPage: p }">
+                    <td class="nameProduct">{{product.name}}</td>
+                    <td class="priceProducto"> {{product.price | currency:'S/.'}}</td>
+                    <td class="imgProduct"><img [src]="product.image"></td>
+                    <td class="typeProduct">{{product.type}}</td>
+                    <td class="editar">
+                        <button (click)="showEdit(product)">
+                            <fa-icon [icon]="faEdit"></fa-icon>
+                        </button>
+                    </td>
+                    <td class="delete">
+                        <button (click)="deleteProduct(product._id)">
+                            <fa-icon [icon]="faTrashAlt"></fa-icon>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
+    </div>
+</div>
+<app-modal-product [editProduct]="myModalEdit" (close)="closeEdit($event)" (show)="showProducts()" [product]="product">
+</app-modal-product>

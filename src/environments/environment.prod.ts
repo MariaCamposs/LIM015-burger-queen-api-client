@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  domain: "https://burgerqueen-api-lab.herokuapp.com"
 };

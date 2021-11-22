@@ -1,0 +1,79 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+button{
+  width: 150px;
+  height: 57px;
+  border-radius: 30px;
+  color: #ffffff;
+  background-color: #DD3B30;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+}
+button:hover{
+  background-color: #E74574;
+}
+.title{
+  color: #000000;
+  font-size: 24px;
+  font-weight: bold;
+  justify-content: center;
+  display: flex;
+  padding: 50px 0 50px 0;
+}
+.id-order, .update-status{
+  font-size: 16px;
+  width: 135px;
+  height: 45px;
+}
+.container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.table-orders{
+  padding-top: 25px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+table{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  font-size: 18px;
+}
+tr{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 5px 0 ;
+  font-size: 20px;
+}
+.orders, .name-client, .title-status, .title-update{
+  width: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom:1pt solid black;
+}
+.orders-button, .name, .status, .update-button{
+  width: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom:1pt solid black;
+}
+.my-pagination{
+  padding-top: 50px;
+  align-self: center;
+}
+  .my-pagination /deep/ .ngx-pagination .current {
+  background: red;
+}

@@ -1,0 +1,38 @@
+<app-header></app-header>
+<p class="title">Ordenes</p>
+<div class="container">
+  <div class="buttons">
+    <button type="submit" (click)="filterStatus('pending')">Pendientes</button>
+    <button type="submit" (click)="filterStatus('canceled')">Cancelados</button>
+    <button type="submit" (click)="filterStatus('preparing')">Preparando</button>
+    <button type="submit" (click)="filterStatus('delivering')">Entregando</button>
+    <button type="submit" (click)="filterStatus('delivered')">Entregados</button>
+  </div>
+  <div class="table-orders">
+    <table>
+      <thead>
+        <tr>
+          <th class="orders">Ordenes</th>
+          <th class="name-client">Nombre de cliente</th>
+          <th class="title-status">Estado</th>
+          <th class="title-update">Actualizar estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of items | paginate: { itemsPerPage: 10, currentPage: p } , index as i">
+          <td class="orders-button">
+            <button class="id-order" (click)="showOrder(order._id)">Orden Nº {{i+1}}</button>
+          </td>
+          <td class="name"> {{order.client}}</td>
+          <td class="status"> {{order.status}}</td>
+          <td class="update-button">
+            <button class="update-status" name="status" (click)="updateStatus(order)">Cambiar estado</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>
+<app-modal-order [showOneOrder]="modalOrder" (close)="closeEdit($event)" (show)="showOrders()" [order]="order">
+</app-modal-order>

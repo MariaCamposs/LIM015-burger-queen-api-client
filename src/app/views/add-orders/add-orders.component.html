@@ -1,0 +1,83 @@
+<app-header></app-header>
+<div class="container">
+    <div class="container-orders">
+        <div class="listProducts">
+            <div class="buttons">
+                <button type="submit" (click)="filterType('Bebidas')">Bebidas</button>
+                <button type="submit" (click)="filterType('Hamburguesa')"> Hamburguesas</button>
+                <button type="submit" (click)="filterType('Adicionales')">Adicionales</button>
+                <button type="submit" (click)="filterType('Desayunos')">Desayunos</button>
+            </div>
+
+            <div class="showProducts">
+                <div class="infoProduct" *ngFor="let product of items">
+                    <div class="iconAdd">
+                        <fa-icon class="icon" (click)="addProduct(product)" [icon]="faPlusCircle"></fa-icon>
+                    </div>
+                    <div class="description">
+                        <div class="image">
+                            <img [src]="product.image" alt="">
+                        </div>
+                        <p class="name">{{ product.name }}</p>
+                        <p class="price">{{ product.price | currency:'S/.' }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="orderProducts">
+        <div>
+            <p class="title">Pedido</p>
+        </div>
+        <div class="containerForm">
+            <div class="inputName">
+                <label for="name">Cliente: </label>
+                <input [formControl]="nameClient" name="name" required type="text" placeholder="Nombre del cliente">
+            </div>
+            <div class="tableProduct">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="name nameTh">Producto</th>
+                            <th class="quantity">Cantidad</th>
+                            <th class="price">Prec. Unit.</th>
+                            <th class="delete"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let product of productItem">
+                            <td class="name nameTd">{{product.product.name}}</td>
+                            <td class="quantity">
+                                <div class="icon-decrease">
+                                    <fa-icon class="iconCircle" (click)="decreaseOneItem(product)"
+                                        [icon]="faMinusCircle"></fa-icon>
+                                </div>
+                                <p class="quantityTd">{{product.qty}}</p>
+                                <div class="icon-increase">
+                                    <fa-icon class="iconCircle" (click)="increaseOneItem(product)"
+                                        [icon]="faPlusCircle"></fa-icon>
+                                </div>
+                            </td>
+                            <td class="price">
+                                <p class="priceTd">S/ {{product.product.price}}</p>
+                            </td>
+                            <td class="delete deleteTd">
+                                <div class="">
+                                    <fa-icon class="iconDelete" (click)="deleteItem(product)" [icon]="faTrashAlt">
+                                    </fa-icon>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <section class="total">
+            <p>Total: S/ {{total}}</p>
+        </section>
+        <div class="sendButton">
+            <button (click)="newOrder(client)">Enviar a cocina</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<section class="modal" *ngIf="editProduct">
+  <div class="modal_content">
+
+    <div class="edit-product">
+      <div class="headerModal">
+        <span class="closeModal" (click)="closeModal()">&times;</span>
+      </div>
+      <h2>Actualizar usuario</h2>
+
+      <form class="form">
+        <div>
+          <label for="name">Nombre: </label>
+          <input [(value)]="product.name" #updateName name="nameUpdate" required type="text"
+            placeholder="Nombre">
+        </div>
+        <div>
+          <label for="price">Precio: </label>
+          <input [(value)]="product.price" #updatePrice name="priceUpdate" required type="number" placeholder="Precio">
+        </div>
+        <div>
+          <label for="image">Imagen: </label>
+          <input [(value)]="product.image" #updateImage name="imageUpdate" required type="text" placeholder="Link de imagen">
+        </div>
+        <div>
+          <label for="type">Tipo: </label>
+          <input [(value)]="product.type" #updateType name="typeUpdate" required type="text" placeholder="Tipo de producto">
+        </div>
+        <div class="cancel-save">
+          <button type='button' (click)="closeModal()" class="cancel">Cancelar</button>
+          <button type='button' (click)="updateProduct(updateName.value, updatePrice.value, updateImage.value, updateType.value)"
+            class="save">Actualizar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
