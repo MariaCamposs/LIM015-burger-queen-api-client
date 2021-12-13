@@ -1,27 +1,66 @@
-# LIM015BurgerQueenApiClient
+# Burger Queen 🍔
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.9.
+Web App para restaurante de hamburguesas, consumiento [API rest](https://github.com/MariaCamposs/LIM015-burger-queen-api)
+Cuenta con login, valida si el usuario es administrador o no, en el caso de ser administrador este puede crear nuevos usuarios y productos, si no es administrador se le dirige al home de staff donde puede crear ordenes y visualizar el estado de entrega (pendiente, cancelado, preparando, enviando y entregado).
 
-## Development server
+## Capturas
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Login
 
-## Code scaffolding
+![](src/assets/captures/login.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Home - Adimistrador
 
-## Build
+![](src/assets/captures/home-admin.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+#### Crear usuarios
 
-## Running unit tests
+Solo el administrador puede crear usuarios y asignar un rol.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![](src/assets/captures/add-user.png)
 
-## Running end-to-end tests
+#### Lista de usuarios
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+En esta seccion el administrador podra actualizar el correo o eliminar un usuario.
 
-## Further help
+![](src/assets/captures/users-list.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![](src/assets/captures/update-user.png)
+
+#### Lista de productos
+
+En el apartado de lista de productos podremos ver todos los productos que han sido creados, tambien se puede editar y eliminar.
+
+![](src/assets/captures/products-list.png)
+
+![](src/assets/captures/update-product.png)
+
+### Home - Staff
+
+![](src/assets/captures/home-staff.png)
+
+#### Crear ordenes
+
+Al hacer click en `+` se agrega al listado de orden.
+![](src/assets/captures/order-1.png)
+
+![](src/assets/captures/order-2.png)
+
+![](src/assets/captures/order-3.png)
+
+![](src/assets/captures/order-4.png)
+
+#### Listado de ordenes segun estado
+
+En esta seccion las ordenes se filtran segun el estado de la orden.
+
+![](src/assets/captures/pending.png)
+
+![](src/assets/captures/orders-list.png)
+
+## Construido con 👩‍💻
+
+- Angular 12.
+- CSS.
+- Burger queen API (creacion propia).
+- Maquetado en Figma.
