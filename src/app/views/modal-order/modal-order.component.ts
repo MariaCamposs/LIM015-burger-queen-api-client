@@ -29,4 +29,8 @@ export class ModalOrderComponent implements OnInit {
     this.close.emit(false);
   }
 
+  showOrders(){
+    this.show.emit();
+  }
+
 }

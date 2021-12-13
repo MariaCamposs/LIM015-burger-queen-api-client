@@ -1,39 +1,39 @@
-.title{
-    font-family: "Open Sans", sans-serif;
-    color: #980B0B;
-    font-size: 25px;
-    font-weight: bold;
-    justify-content: center;
-    display: flex;
-  }
-  .buttons{
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-  }
-  input[type=button]{
-    border-radius: 30px;
-    padding: 10px;
-    font-family: "Open Sans", sans-serif;
-    font-size: 20px;
-    color: #FFFFFF;
-    background-color: #DD3B30;
-    cursor: pointer;
-    width: 162px;
-    height: 70px;
-    border: none;
-  }
-  input[type=button]:hover{
-    color: #DD3B30;
-    background-color: #FFFFFF;
-    border: solid 1px #DD3B30;
-    transition: 0.5s;
-  }
-  .buttons{
-    padding: 50px;
-  }
-  .img{
-    display: flex;
-    justify-content: flex-end;
-    transform: translate(-100px, 50px);
-  }
+.title {
+  font-family: "Open Sans", sans-serif;
+  color: #980b0b;
+  font-size: 25px;
+  font-weight: bold;
+  justify-content: center;
+  display: flex;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+input[type="button"] {
+  border-radius: 30px;
+  padding: 10px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  color: #ffffff;
+  background-color: #dd3b30;
+  cursor: pointer;
+  width: 162px;
+  height: 70px;
+  border: none;
+}
+input[type="button"]:hover {
+  color: #dd3b30;
+  background-color: #ffffff;
+  border: solid 1px #dd3b30;
+  transition: 0.5s;
+}
+.buttons {
+  padding: 50px;
+}
+.img {
+  display: flex;
+  justify-content: flex-end;
+  transform: translate(-100px, -70px);
+}

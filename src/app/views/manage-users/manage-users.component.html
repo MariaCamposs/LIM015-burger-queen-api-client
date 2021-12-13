@@ -33,9 +33,6 @@
             </tr>
         </tbody>
     </table>
-    <div class="img">
-        <img src="../../../assets/burger.png" alt="Burger queen">
-    </div>
     <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
 </div>
 <app-modal-user [editUser]="myModalEdit" (close)="closeEdit($event)" (show)="showUsers()" [user]="user"></app-modal-user>

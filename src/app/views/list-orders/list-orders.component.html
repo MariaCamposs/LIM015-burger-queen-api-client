@@ -21,7 +21,7 @@
       <tbody>
         <tr *ngFor="let order of items | paginate: { itemsPerPage: 10, currentPage: p } , index as i">
           <td class="orders-button">
-            <button class="id-order" (click)="showOrder(order._id)">Orden Nº {{i+1}}</button>
+            <button class="id-order" (click)="showOrder(order)">Orden Nº {{i+1}}</button>
           </td>
           <td class="name"> {{order.client}}</td>
           <td class="status"> {{order.status}}</td>

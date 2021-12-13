@@ -58,11 +58,9 @@ export class ListOrdersComponent implements OnInit {
     this.orders = order;
   }
 
-  showOrder(id: any) {
-    const orderIndex = this.orders.findIndex(((order: any) => {
-      order._id === id
-    }));
-    return orderIndex
+  showOrder(currentOrder: Object) {
+    this.order = currentOrder;
+    this.modalOrder = true;
   }
 
   updateStatus(item: any) {
