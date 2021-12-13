@@ -1,13 +1,10 @@
-* {
-  font-family: "Open Sans", sans-serif;
-}
 .title {
   color: #000000;
   font-size: 24px;
   font-weight: bold;
   justify-content: center;
   display: flex;
-  padding-top: 50px;
+  padding: 40px;
 }
 
 .form {
@@ -103,4 +100,59 @@ label {
   font-size: 20px;
   border: none;
   cursor: pointer;
+}
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .logo-container {
+    gap: 60px;
+  }
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .logo-container {
+    gap: 60px;
+  }
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  /* CSS */
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  /* CSS */
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .form {
+    max-width: 600px;
+    width: 100%;
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  .saveProduct {
+    transform: none;
+  }
 }

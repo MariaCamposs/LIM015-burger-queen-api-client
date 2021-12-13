@@ -7,19 +7,19 @@
       <h2>Orden</h2>
         <div class="form">
           <label for="name">Nombre: </label>
-          <input type="text" class="client" [(value)]="order.client">
+          <input type="text" class="client" [(value)]="order.client" readonly>
           <label for="name">Estado de orden: </label>
-          <input type="text" class="status" [(value)]="order.status">
+          <input type="text" class="status" [(value)]="order.status" readonly>
           <label for="name">Listado de productos: </label>
           <div *ngFor="let product of order.products" class="products">
             <label for="name" class="product-label">Producto: </label>
-            <input type="text" class="name" [(value)]="product.product">
+            <input type="text" class="name" [(value)]="product.product" readonly>
             <label for="name" class="product-label">Cantidad: </label>
-            <input type="text" class="qty" [(value)]="product.qty">
+            <input type="text" class="qty" [(value)]="product.qty" readonly>
           </div>
         </div>
         <div class="cancel-save">
-          <button type='button' (click)="closeModal()" class="cancel">Cancelar</button>
+          <button type='button' (click)="updateStatus(order)" class="cancel">Cancelar orden</button>
         </div>
     </div>
   </div>

@@ -8,7 +8,6 @@ import { AddProductComponent } from './views/add-product/add-product.component';
 import { ManageProductsComponent } from './views/manage-products/manage-products.component';
 import { AddOrdersComponent } from './views/add-orders/add-orders.component';
 import { ListOrdersComponent } from './views/list-orders/list-orders.component';
-import { ProfileComponent } from './views/profile/profile.component';
 import { AuthGuard } from './services/auth/auth.guard'
 import { StaffComponent } from './views/staff/staff.component';
 
@@ -22,8 +21,7 @@ const routes: Routes = [
   { path: 'addproduct', canActivate: [AuthGuard], component: AddProductComponent },
   { path: 'manageproducts', canActivate: [AuthGuard], component: ManageProductsComponent },
   { path: 'addorders', canActivate: [AuthGuard], component: AddOrdersComponent },
-  { path: 'listorders', canActivate: [AuthGuard], component: ListOrdersComponent },
-  { path: 'profile', canActivate: [AuthGuard], component: ProfileComponent }
+  { path: 'listorders', canActivate: [AuthGuard], component: ListOrdersComponent }
 ];
 
 
@@ -33,4 +31,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 export const routingComponents = [LoginComponent, HomeComponent, StaffComponent, AddUserComponent,
-ManageUsersComponent, AddProductComponent, ManageProductsComponent, AddOrdersComponent, ListOrdersComponent, ProfileComponent]
+ManageUsersComponent, AddProductComponent, ManageProductsComponent, AddOrdersComponent, ListOrdersComponent]

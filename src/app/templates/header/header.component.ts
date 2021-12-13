@@ -33,13 +33,4 @@ export class HeaderComponent implements OnInit {
     this.auth.logout();
   }
 
-
-  btnProfile(currentUser: Object){
-    console.log('estoy en mi perfil')
-    const id: any = localStorage.getItem('_id');
-    currentUser = id;
-    this.myModalEdit = true;
-    this.router.navigate(['profile']);
-
-  }
 }

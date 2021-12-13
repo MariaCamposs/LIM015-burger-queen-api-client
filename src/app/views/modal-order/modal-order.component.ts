@@ -32,5 +32,17 @@ export class ModalOrderComponent implements OnInit {
   showOrders(){
     this.show.emit();
   }
-
+  updateStatus(item: any) {
+    if (item.status === 'pending') {
+      const order = {
+        ...item,
+        status: 'canceled'
+      }
+      this.orderService.updateOrder(item._id, order).subscribe(() => {
+        console.log('cambiando status a canceled', order)
+        this.orderService.newOrder(item)
+        this.showOrders();
+      })
+    }
+  }
 }

@@ -17,7 +17,6 @@ import { AddProductComponent } from './views/add-product/add-product.component';
 import { ManageProductsComponent } from './views/manage-products/manage-products.component';
 import { AddOrdersComponent } from './views/add-orders/add-orders.component';
 import { ListOrdersComponent } from './views/list-orders/list-orders.component';
-import { ProfileComponent } from './views/profile/profile.component';
 import { ModalUserComponent } from './views/modal-user/modal-user.component';
 import { ModalProductComponent } from './views/modal-product/modal-product.component';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -37,7 +36,6 @@ import { ModalOrderComponent } from './views/modal-order/modal-order.component';
     ManageProductsComponent,
     AddOrdersComponent,
     ListOrdersComponent,
-    ProfileComponent,
     ModalUserComponent,
     ModalProductComponent,
     ModalOrderComponent

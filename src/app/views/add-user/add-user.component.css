@@ -1,16 +1,13 @@
-*{
-  font-family: "Open Sans", sans-serif;
-}
-.title{
+.title {
   color: #000000;
   font-size: 24px;
   font-weight: bold;
   justify-content: center;
   display: flex;
-  padding-top: 50px;
+  padding: 40px;
 }
 
-.form{
+.form {
   max-width: 600px;
   margin: 0 auto;
   width: 30%;
@@ -18,18 +15,20 @@
   flex-direction: column;
   gap: 30px;
 }
-.saveuser{
+.saveuser {
   width: 147px;
   height: 44px;
   border-radius: 30px;
   color: #000000;
-  background-color: #F6BB33;
+  background-color: #f6bb33;
   font-size: 20px;
   border: none;
   cursor: pointer;
   align-self: center;
 }
-input[type=email], input[type=password], input[type=text] {
+input[type="email"],
+input[type="password"],
+input[type="text"] {
   background-color: #f6f6f6;
   font-family: "Open Sans", sans-serif;
   border: none;
@@ -48,19 +47,23 @@ input[type=email], input[type=password], input[type=text] {
   transition: all 0.5s ease-in-out;
 }
 
-input[type=email]:focus, input[type=password]:focus, input[type=text]:focus {
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus {
   background-color: #fff;
-  border-bottom: 2px solid #C31414;
+  border-bottom: 2px solid #c31414;
 }
 
-input[type=email]:placeholder, input[type=password]:placeholder, input[type=text]:placeholder {
+input[type="email"]:placeholder,
+input[type="password"]:placeholder,
+input[type="text"]:placeholder {
   color: #cccccc;
 }
-.input{
+.input {
   flex-direction: column;
   display: flex;
 }
-select{
+select {
   margin: 5px;
   border: 2px solid #f6f6f6;
   border-radius: 30px;
@@ -72,26 +75,63 @@ select{
   font-size: 16px;
   letter-spacing: 1px;
 }
-label{
+label {
   font-size: 20px;
 }
-.usersButton{
+.usersButton {
   width: 254px;
   height: 44px;
   border-radius: 30px;
   color: #000000;
-  background-color: #F6BB33;
+  background-color: #f6bb33;
   font-size: 20px;
   border: none;
   cursor: pointer;
 }
-.show-users{
+.show-users {
   justify-content: center;
   display: flex;
-  padding-top: 80px;
+  padding: 30px;
 }
-.img{
-  display: inline-flex;
-  justify-content: flex-end;
-  transform: translate(780px, -150px);
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .logo-container {
+    gap: 60px;
+  }
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  /* CSS */
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  /* CSS */
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .form {
+    width: 70%;
+  }
 }
